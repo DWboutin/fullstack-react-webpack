@@ -1,0 +1,15 @@
+web:
+  build: .
+  ports:
+    - "3000:3000"
+  environment:
+    PORT: 3000
+  volumes:
+    - .:/usr/src/app
+    - /usr/src/app/node_modules
+  links:
+    - mongo
+mongo:
+  image: mongo:3.4.1
+  ports:
+    - "27017:27017"
