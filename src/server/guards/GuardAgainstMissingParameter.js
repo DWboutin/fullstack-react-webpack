@@ -10,19 +10,17 @@ export default class GuardAgainstMissingParameter {
     this.parameters = parameters;
     this.paramsToValidate = paramsToValidate;
 
-    this.customExceptionMessage = `Required parameters : [${paramsToValidate.join()}]`;
+    this.customExceptionMessage = `Required parameters : [${paramsToValidate.join(', ')}]`;
 
-    if(typeof customExceptionMessage !== "undefined") {
+    if (typeof customExceptionMessage !== "undefined") {
       this.customExceptionMessage = customExceptionMessage;
     }
   }
 
   guard() {
-
     var self = this;
 
     this.paramsToValidate.forEach(function(param) {
-
       if(!self.parameters[param]) {
         throw new MissingParameterException(self.customExceptionMessage);
       }

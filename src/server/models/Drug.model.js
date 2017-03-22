@@ -8,6 +8,7 @@ const drugSchema: Object = new Schema({
   name: { type: String, required: true },
   locationId: { type: Number, required: true },
   quantity: { type: Number, required: true },
+  price: { type: Number, required: true },
 });
 
 drugSchema.pre('save', function (next) {

@@ -7,6 +7,7 @@ const drugParameters: Array<string> = [
   'name',
   'locationId',
   'quantity',
+  'price'
 ];
 
 export function create(req: Object, res: Object) {

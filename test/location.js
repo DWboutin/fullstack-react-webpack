@@ -134,5 +134,23 @@ describe('Locations', () => {
         });
     });
   });
+
+  describe('/POST /locations/create', () => {
+    it('it should NOT create a new location called "Québec" missing "country" parameter', (done) => {
+      const location = {
+        name: 'Québec'
+      };
+
+      chai.request(server)
+        .post('/locations/create')
+        .send(location)
+        .end((err, res) => {
+          res.should.have.status(422);
+          res.body.should.be.a('object');
+          res.body.should.have.property('errorMessage').eql('Required parameters : [name, country]');
+          done();
+        });
+    });
+  });
 });
 

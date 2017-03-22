@@ -39,7 +39,8 @@ describe('Drugs', () => {
       const drug = {
         name: 'Pot',
         locationId: 1234,
-        quantity: 10,
+        quantity: 1000,
+        price: 10
       };
 
       chai.request(server)
@@ -52,6 +53,9 @@ describe('Drugs', () => {
           res.body.should.be.a('object');
           res.body.should.have.property('_id');
           res.body.should.have.property('name').eql('Pot');
+          res.body.should.have.property('locationId').eql(1234);
+          res.body.should.have.property('quantity').eql(1000);
+          res.body.should.have.property('price').eql(10);
           done();
         });
     });
@@ -97,6 +101,7 @@ describe('Drugs', () => {
         name: 'Pot',
         locationId: 1234,
         quantity: 10,
+        price: 10,
       };
 
       chai.request(server)
@@ -131,6 +136,26 @@ describe('Drugs', () => {
           res.should.have.status(200);
           res.body.should.be.a('array');
           res.body.length.should.be.eql(0);
+          done();
+        });
+    });
+  });
+
+  describe('/POST /drugs/create', () => {
+    it('it should NOT create a new drug called "Pot" missing "price" parameter', (done) => {
+      const drug = {
+        name: 'Pot',
+        locationId: 1234,
+        quantity: 1000
+      };
+
+      chai.request(server)
+        .post('/drugs/create')
+        .send(drug)
+        .end((err, res) => {
+          res.should.have.status(422);
+          res.body.should.be.a('object');
+          res.body.should.have.property('errorMessage').eql('Required parameters : [name, locationId, quantity, price]');
           done();
         });
     });
