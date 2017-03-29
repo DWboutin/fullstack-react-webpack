@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 
 const drugSchema: Object = new Schema({
   name: { type: String, required: true },
-  locationId: { type: Number, required: true },
+  locationId: { type: String, required: true },
   quantity: { type: Number, required: true },
   price: { type: Number, required: true },
 });

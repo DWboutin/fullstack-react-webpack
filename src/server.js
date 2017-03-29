@@ -4,13 +4,22 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
 
+import DatabaseManager from './server/helpers/DatabaseManager';
+
 import serverRoutes from './server/routes';
 
 const app = express();
 const appPort = (process.env.NODE_ENV === 'test') ? 1234 : 3000;
 
-mongoose.connect('mongodb://mongo:27017');
 mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://mongo:27017', (err) => {
+  if (err) {
+    throw err;
+  }
+  if (process.env.NODE_ENV !== 'test') {
+    DatabaseManager.create();
+  }
+});
 
 app.use(bodyParser.json());
 

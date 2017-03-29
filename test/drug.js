@@ -38,7 +38,7 @@ describe('Drugs', () => {
     it('it should create a new drug called "Pot"', (done) => {
       const drug = {
         name: 'Pot',
-        locationId: 1234,
+        locationId: '1234',
         quantity: 1000,
         price: 10
       };
@@ -53,7 +53,7 @@ describe('Drugs', () => {
           res.body.should.be.a('object');
           res.body.should.have.property('_id');
           res.body.should.have.property('name').eql('Pot');
-          res.body.should.have.property('locationId').eql(1234);
+          res.body.should.have.property('locationId').eql('1234');
           res.body.should.have.property('quantity').eql(1000);
           res.body.should.have.property('price').eql(10);
           done();
@@ -99,7 +99,7 @@ describe('Drugs', () => {
     it('it should NOT create a new drug with same name and infos', (done) => {
       const drug = {
         name: 'Pot',
-        locationId: 1234,
+        locationId: '1234',
         quantity: 10,
         price: 10,
       };
@@ -145,7 +145,7 @@ describe('Drugs', () => {
     it('it should NOT create a new drug called "Pot" missing "price" parameter', (done) => {
       const drug = {
         name: 'Pot',
-        locationId: 1234,
+        locationId: '1234',
         quantity: 1000
       };
 
