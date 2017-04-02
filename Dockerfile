@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 # Install app dependencies
 COPY package.json /usr/src/app/
 RUN apt-get update && apt-get install -y ocaml libelf-dev
-RUN yarn global add mocha babel-cli babel-core babel-register flow-bin
+RUN yarn global add mocha babel-cli flow-bin
 RUN yarn install
 
 # Bundle app source

@@ -15,6 +15,7 @@ function Html(props) {
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, user-scalable=no" />
       <title>{ APP_NAME }</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
       <link rel="stylesheet" href={`${BASE_URL}/assets/css/style.css`} />
       <script dangerouslySetInnerHTML={{ __html: 'window.INITIAL_STATE = ' + initialState + ';' }} />
     </head>

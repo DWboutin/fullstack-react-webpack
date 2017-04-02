@@ -1,0 +1,25 @@
+#header{
+  background-color: #D8D8D8;
+
+  .logo{
+    display: inline-block;
+    position: relative;
+    font-family: 'Kayak sans';
+    font-size: rem(30);
+    text-decoration: none;
+    color: #333333;
+    padding-top: 0.5em;
+    padding-bottom: 0.4em;
+  }
+
+  .menu-link{
+    display: inline-block;
+    position: relative;
+    float: right;
+    font-size: rem(26);
+    color: #333333;
+    padding-top: 0.6em;
+    padding-bottom: 0.4em;
+    cursor: pointer;
+  }
+}

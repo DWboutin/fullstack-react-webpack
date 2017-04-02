@@ -1,6 +1,19 @@
 {
   "plugins": [
-    "transform-flow-strip-types"
+    "transform-flow-strip-types",
+    ["module-resolver", {
+      "root": ["."],
+      "alias": {
+        "src": "src",
+        "routes": "./src/routes.jsx",
+        "config": "./src/config.js",
+        "middlewares": "./src/middlewares/",
+        "components": "./src/client/components/",
+        "reducers": "./src/client/reducers/",
+        "language": "./src/i18n/base-en.js",
+        "i18n": "./src/i18n/",
+      }
+    }]
   ],
   "presets": [
     "react",

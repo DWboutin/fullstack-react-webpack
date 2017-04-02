@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { IntlProvider, FormattedMessage } from 'react-intl';
 
-import i18n from '../../i18n';
-import messages from '../../i18n/base-en';
+import Header from 'components/sections/Header.react';
+
+import i18n from 'i18n';
+import messages from 'language';
 
 class App extends React.Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class App extends React.Component {
   }
 
   render() {
+    const { children } = this.props;
     const intlData = {
       locale: this.state.locale,
       messages: i18n[this.state.locale],
@@ -32,23 +34,22 @@ class App extends React.Component {
 
     return (
       <IntlProvider key="intl" {...intlData}>
-        <div>
+        <div id="application">
+          <Header />
+          {children}
           <div>
             <button onClick={this.handleLocaleChange}>
               <FormattedMessage {...messages.localeText} />
             </button>
           </div>
-          <h1>
-            <FormattedMessage {...messages.helloWorld} />{' '}
-            <small>
-              <FormattedMessage {...messages.fromAComponent} />
-            </small>
-          </h1>
-          <Link to="/test">Test link</Link>
         </div>
       </IntlProvider>
     );
   }
 }
+
+App.propTypes = {
+  children: React.PropTypes.element.isRequired,
+};
 
 export default App;

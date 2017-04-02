@@ -40,6 +40,11 @@ gulp.task('images', function(cb) {
     .on('error', cb);
 });
 
+gulp.task('fonts', function(cb) {
+  gulp.src('./src/client/assets/fonts/**')
+    .pipe(gulp.dest('./public/fonts/'));
+});
+
 gulp.task('scripts', function(){
   return gulp.src( WATCH_SCRIPTS.SCRIPTS )
     .pipe(sourcemaps.init())
@@ -60,5 +65,5 @@ gulp.task('watch', () => {
   gulp.watch( WATCH_SCRIPTS.SASS, ['sass']);
 });
 
-gulp.task('build', ['sass', 'images', 'scripts']);
+gulp.task('build', ['sass', 'fonts', 'images', 'scripts']);
 gulp.task('default', ['build', 'watch']);

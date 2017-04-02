@@ -1,0 +1,94 @@
+@font-face {
+  font-family: 'Kayak sans';
+  src: url('../fonts/kayak_sans_bold_italic-webfont.woff2') format('woff2'),
+  url('../fonts/kayak_sans_bold_italic-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Kayak sans';
+  src: url('../fonts/kayak_sans_bold-webfont.woff2') format('woff2'),
+  url('../fonts/kayak_sans_bold-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Kayak sans';
+  src: url('../fonts/kayak_sans_light_italic-webfont.woff2') format('woff2'),
+  url('../fonts/kayak_sans_light_italic-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Kayak sans';
+  src: url('../fonts/kayak_sans_light-webfont.woff2') format('woff2'),
+  url('../fonts/kayak_sans_light-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Kayak sans';
+  src: url('../fonts/kayak_sans_regular_italic-webfont.woff2') format('woff2'),
+  url('../fonts/kayak_sans_regular_italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Kayak sans';
+  src: url('../fonts/kayak_sans_regular-webfont.woff2') format('woff2'),
+  url('../fonts/kayak_sans_regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/**
+ * http://applemusic.tumblr.com/
+ * https://jsfiddle.net/xq56dmrh/
+ */
+
+/** Ultra Light */
+@font-face {
+  font-family: 'San Francisco';
+  font-weight: 100;
+  src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-ultralight-webfont.woff');
+}
+
+/** Thin */
+@font-face {
+  font-family: 'San Francisco';
+  font-weight: 200;
+  src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-thin-webfont.woff');
+}
+
+/** Regular */
+@font-face {
+  font-family: 'San Francisco';
+  font-weight: 400;
+  src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff');
+}
+
+/** Medium */
+@font-face {
+  font-family: 'San Francisco';
+  font-weight: 500;
+  src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff');
+}
+
+/** Semi Bold */
+@font-face {
+  font-family: 'San Francisco';
+  font-weight: 600;
+  src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.woff');
+}
+
+/** Bold */
+@font-face {
+  font-family: 'San Francisco';
+  font-weight: 700;
+  src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff');
+}

@@ -1,6 +1,8 @@
 import frLocaleData from 'react-intl/locale-data/fr';
 import { defineMessages, addLocaleData } from 'react-intl';
 
+import messagesPage from './en/messagesPage';
+
 addLocaleData(frLocaleData);
 
 const messages = defineMessages({
@@ -19,6 +21,7 @@ const messages = defineMessages({
     description: 'FR',
     defaultMessage: 'FR',
   },
+  ...messagesPage,
 });
 
 export default messages;

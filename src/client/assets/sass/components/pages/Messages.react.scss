@@ -1,0 +1,21 @@
+#messages{
+  .title-row{
+    font-family: 'San Francisco';
+    font-size: rem(21);
+    color: #333333;
+
+    h1{
+      font-size: 1em;
+      font-weight: 600;
+    }
+  }
+
+  .round-btn{
+    display: inline-block;
+    position: relative;
+    border-radius: 20px;
+    background-color: #D8D8D8;
+    color: #333333;
+    padding: 0.2em 10px;
+  }
+}

@@ -1,11 +1,14 @@
 import React from 'react';
-import { Route } from 'react-router';
+import { Route } from 'react-router-dom';
 
-import App from './client/components/App.react';
+import App from 'components/App.react';
+import Messages from 'components/pages/Messages.react';
 
 function Routes() {
   return (
-    <Route path="/" component={App} />
+    <App>
+      <Route path="/" component={Messages} />
+    </App>
   );
 }
 
