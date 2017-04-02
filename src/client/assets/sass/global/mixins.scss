@@ -1,0 +1,31 @@
+@function rem($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}rem;
+}
+
+@mixin responsive($size){
+  @if $size == 'large' {
+    @media (min-width: $screen-lg){
+      @content
+    }
+  }
+  @if $size == 'normal' {
+    @media (min-width: $screen-md) and (max-width: $screen-lg - 1){
+      @content
+    }
+  }
+  @if $size == 'tablet' {
+    @media (min-width: $screen-sm) and (max-width: $screen-md - 1){
+      @content
+    }
+  }
+  @if $size == 'phone to tablet' {
+    @media (max-width: $screen-sm){
+      @content
+    }
+  }
+  @if $size == 'phone' {
+    @media (max-width: $screen-xs){
+      @content
+    }
+  }
+}

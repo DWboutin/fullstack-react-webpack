@@ -15,6 +15,7 @@ function Html(props) {
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, user-scalable=no" />
       <title>{ APP_NAME }</title>
+      <link rel="stylesheet" href={`${BASE_URL}/assets/css/style.css`} />
       <script dangerouslySetInnerHTML={{ __html: 'window.INITIAL_STATE = ' + initialState + ';' }} />
     </head>
     <body>
