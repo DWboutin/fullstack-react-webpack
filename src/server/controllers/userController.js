@@ -1,27 +1,24 @@
 // @flow
-import Player from '../models/Player.model';
+import User from '../models/User.model';
 import ErrorResponseHandler from '../helpers/ErrorResponseHandler';
 import GuardAgainstMissingParameter from '../guards/GuardAgainstMissingParameter';
 
-const playerParameters: Array<string> = [
+const userParameters: Array<string> = [
   'name',
-  'currentLocationId',
-  'money',
-  'health',
 ];
 
 export function create(req: Object, res: Object) {
   try{
-    (new GuardAgainstMissingParameter(req.body, playerParameters)).guard();
+    (new GuardAgainstMissingParameter(req.body, userParameters)).guard();
 
-    const player: Object = new Player(req.body);
+    const user: Object = new User(req.body);
 
-    player.save((err, player) => {
+    user.save((err, user) => {
       if (err) {
         (new ErrorResponseHandler(res, err)).writeResponse();
       }
 
-      res.status(200).json(player);
+      res.status(200).json(user);
     });
   } catch(e) {
     (new ErrorResponseHandler(res, e)).writeResponse();
@@ -30,12 +27,12 @@ export function create(req: Object, res: Object) {
 
 export function read(req: Object, res: Object) {
   try{
-    Player.find(req.query, (err, players) => {
+    User.find(req.query, (err, users) => {
       if (err) {
         (new ErrorResponseHandler(res, err)).writeResponse();
       }
 
-      res.status(200).json(players);
+      res.status(200).json(users);
     });
   } catch(e) {
     (new ErrorResponseHandler(res, e)).writeResponse();
@@ -44,17 +41,17 @@ export function read(req: Object, res: Object) {
 
 export function update(req: Object, res: Object) {
   try{
-    Player.findByIdAndUpdate(req.params.id, req.body, (err) => {
+    User.findByIdAndUpdate(req.params.id, req.body, (err) => {
       if (err) {
         (new ErrorResponseHandler(res, err)).writeResponse();
       }
 
-      Player.findById(req.params.id, (errFind, player) => {
+      User.findById(req.params.id, (errFind, user) => {
         if (err) {
           (new ErrorResponseHandler(res, errFind)).writeResponse();
         }
 
-        res.status(200).send(player);
+        res.status(200).send(user);
       });
     });
   } catch(e) {
@@ -64,12 +61,12 @@ export function update(req: Object, res: Object) {
 
 export function remove(req: Object, res: Object) {
   try{
-    Player.findByIdAndRemove(req.params.id, req.body, (err, player) => {
+    User.findByIdAndRemove(req.params.id, req.body, (err, user) => {
       if (err) {
         (new ErrorResponseHandler(res, err)).writeResponse();
       }
 
-      res.status(200).send(player);
+      res.status(200).send(user);
     });
   } catch(e) {
     (new ErrorResponseHandler(res, e)).writeResponse();
