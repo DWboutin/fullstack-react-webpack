@@ -1,6 +1,6 @@
 // @flow
 import express from 'express';
-// import mongoose from 'mongoose';
+import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
 
@@ -20,14 +20,12 @@ if (!PROD_ENV) {
   webpackDevServer(app);
 }
 
-/*
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://mongo:27017', (err) => {
   if (err) {
     throw err;
   }
 });
-*/
 
 app.use(bodyParser.json());
 app.use('/assets', express.static(`${process.env.ROOT_FOLDER}/public`));
